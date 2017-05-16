@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+<h3> Job Title</h3>
+	<table>
+		<tr ng-repeat="job in jobs">
+
+			<td
+				ng-if="currentUser.role=='Student' || currentUser.role=='Employee' || currentUser.role=='Alumini' "
+				ng-show="job.active"><a href="" ng-click=jobDetail(job.id)>{{job.jobTitle}}</a></td>
+
+			<td ng-if="currentUser.role=='ADMIN'"><a href="" ng-click=jobDetail(job.id)>{{job.jobTitle}}</a></td>
+		</tr> 
+
+	</table>
+	<br>
+	<div ng-show="showJobDetails">
+	 <table class="table table-striped">
+	<tr>
+	<th><b>Description</b></th>
+	<th><b>Skills Required</b></th>
+	<th><b>Location</b></th>
+	<th><b>Years Of Experience</b></th> 
+	<th><b>Company</b></th>
+	<th><b>Posted On</b></th>
+	<th><b ng-show="currentUser.role=='ADMIN'">Active</b> 
+		<b ng-if="job.active">YES</b>
+		<b ng-if="!job.active">NO</b></th>
+	</tr>
+	<tr>
+	<td>{{job.jobDescription}}</td>
+	<td>{{job.skillsRequired}} </td>
+	<td>{{job.location}}</td>
+	<td>{{job.yrsOfExp}}</td>
+	<td>{{job.company}}</td>
+	<td>{{job.postedOn | date:'yyyy:MM:dd'}}</td>
+	</tr>
+	</table>	
+	</div>
+    
+	<a href="#/home"> Home page</a>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+{{message}}
+<h3><center>REGISTER </center></h3>
+	<div class="container"> 
+		<br/><br/><br/>
+		<form class="form-horizontal" name="myForm" role="form" ng-submit="ctrl.submit()">
+			<div class="form-group" ng-class="{'has-error': form.uname.$dirty && form.uname.$error.required}">
+				<label for="fstname" class="col-sm-3 control-label" style="text-align: right;">Enter UserName:</label>
+				<div class="col-sm-6">
+					<input type="text" name="uname" id="uname" class="form-control" placeholder="User name"
+						ng-model="user.username" required />
+						<span ng-show="form.uname.$dirty && form.uname.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{'has-error': form.password.$dirty && form.password.$error.required}">
+				<label for="password" class="col-sm-3 control-label" style="text-align: right;">Password:</label> 
+				<div class="col-sm-6">
+					<input type="password" name="password" id="password" class="form-control" ng-model="user.password" required 
+						placeholder="Password"/>
+					<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{'has-error': form.useremail.$dirty && form.useremail.$error.required}">
+				<label for="useremail" class="col-sm-3 control-label" style="text-align: right;">Enter email:</label> 
+				<div class="col-sm-6">
+					<input type="email" name="useremail" id="useremail" class="form-control" ng-model="user.email" required 
+						placeholder="Email ID"/>
+					<span ng-show="form.useremail.$dirty && form.useremail.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="useridentity" class="col-sm-3 control-label" style="text-align: right;">Role :</label> 
+				<div class="col-sm-6">
+					<label  class="radio-inline">
+                    	<input type="radio" name="useridentity" value="Student" ng-model="user.role" checked="checked">Student
+                    </label>
+					<label  class="radio-inline">
+                    	<input type="radio" name="useridentity" value="Alumini" ng-model="user.role">Alumini
+                    </label>
+					<label  class="radio-inline">
+                    	<input type="radio" name="useridentity" value="Employee" ng-model="user.role">Employee
+                    </label>
+                </div>
+			</div>			
+			
+			
+			<div class="form-group">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<button type="submit" ng-click="registerUser()"  class="btn btn-info">Register</button>
+					<button type="reset" class="btn btn-danger">Clear</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

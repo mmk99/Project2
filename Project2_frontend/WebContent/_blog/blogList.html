@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+Search By Title:
+<input type="text" ng-model="search.title">
+Search By Author
+<input type="text" ng-model="search.createdBy.username">
+
+<table class="table">
+<tr><th>Recent Posts<th></tr>
+
+<tr ng-repeat="blogPost in blogPosts | orderBy:'time':true | filter:search">
+<!-- BootStrap table -->
+<!-- #/getBlogDetail/1 -->
+<td>{{blogPost.title}}</td>
+<td>Created By : {{blogPost.createdBy.username}}</td>
+<td>Created On: {{blogPost.createdOn | date:'MM/dd/yyyy HH:mm'}}</td>
+
+</tr>
+</table>
+
+</body>
+</html>

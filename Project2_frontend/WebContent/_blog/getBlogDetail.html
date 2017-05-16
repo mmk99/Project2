@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="row">
+<div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<div>{{blogPost.title}}</div>
+<span><strong>Created By:</strong>{{blogPost.createdBy.username}}</span>
+ <span><strong>on: </strong>{{blogPost.createdOn | date:'medium'}}</span>
+          
+          </div>
+          <div class="panel-body">
+          {{blogPost.body}}
+          
+          </div>
+</div>
+</div>
+</div>
+<div class="row" >
+<a href="" ng-click="getBlogComments(blogPost.id)" class="btn btn-default">Show Comments</a>
+<ul ng-show="showcomments">
+<li ng-repeat="comment in blogComments" style="list-style: none;">
+<div class="panel panel-default">
+<div class="panel-heading">
+<span><strong>Commented By </strong>{{comment.commentedBy.username}}</span>
+<span><strong>Commented On </strong>{{comment.commentedOn | date:'MM/dd/yyyy'}}</span>
+</div>
+<div class="panel-body">
+{{comment.body}}
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="col-sm-3 col-md-3 col-lg-2"	>
+<form >
+<textarea ng-model="blogComment.body"></textarea>
+<button ng-click="addBlogComment()" class="btn btn-primary btn-block">Post Comment</button>
+</form>
+</div>
+</body>
+</html>
