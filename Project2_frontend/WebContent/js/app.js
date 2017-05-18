@@ -55,6 +55,10 @@ app.config(function($routeProvider){
     	templateUrl:'_friend/friendslist.html',
     	controller:'FriendController'
     })
+    .when('/chat',{
+    	templateUrl:'_chat/chat.html',
+    	controller:'ChatCtrl'
+    })
 })
 app.run(function($rootScope,$cookieStore,UserService,$location){
 	console.log('entering run method ')

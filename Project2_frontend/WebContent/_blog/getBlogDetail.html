@@ -24,9 +24,10 @@
 <div class="row" >
 <a href="" ng-click="getBlogComments(blogPost.id)" class="btn btn-default">Show Comments</a>
 <ul ng-show="showcomments">
-<li ng-repeat="comment in blogComments" style="list-style: none;">
 <div class="panel panel-default">
 <div class="panel-heading">
+<li ng-repeat="comment in blogComments" style="list-style: none;">
+
 <span><strong>Commented By </strong>{{comment.commentedBy.username}}</span>
 <span><strong>Commented On </strong>{{comment.commentedOn | date:'MM/dd/yyyy'}}</span>
 </div>

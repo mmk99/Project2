@@ -47,12 +47,6 @@ app.controller('ChatCtrl', ['$rootScope' ,'$scope', 'socket', function($rootScop
         $scope.users.push(user);
         $scope.$apply();
     };
- 
-    
-    
-    
-    
-    
     
     $scope.$on('sockConnected', function(event, frame) {
         $scope.userName=$rootScope.currentUser.username;

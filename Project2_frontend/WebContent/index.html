@@ -67,7 +67,9 @@
 							<li><a href="#/pendingRequests">Pending Requests</a></li>
 							<li><a href="#/listoffriends">List of Friends</a></li>
 						</ul></li>		
-						
+						<ul class="nav navbar-nav">
+				            <li><a href="#/chat" ng-show="currentUser.username">Chat </a></li>
+				        </ul>
                  </ul>
                  <ul class="nav navbar-nav">
                   <li><a href="" ng-show="currentUser.username">Welcome {{currentUser.username}}</a></li>
@@ -81,9 +83,7 @@
 				    <li ng-show="currentUser.username">
 				    <img src="http://localhost:8089/project_backend/getimage/{{currentUser.username}}" alt="upload Picture" width="30px" height="30px" class="img-rounded"></a></li>
 				 </ul>
-				 <ul class="nav navbar-nav">
-				 <li><a href="#chat" ng-show="currentUser.username">chat </a></li>
-				 </ul>
+				 
 				 <ul class="nav navbar-nav navbar-right">	
 					<li><a href="" ng-click="logout()" ng-show="currentUser.username">logout</a></li>
 				</ul>

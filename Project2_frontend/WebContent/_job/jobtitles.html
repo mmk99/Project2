@@ -28,9 +28,8 @@
 	<th><b>Years Of Experience</b></th> 
 	<th><b>Company</b></th>
 	<th><b>Posted On</b></th>
-	<th><b ng-show="currentUser.role=='ADMIN'">Active</b> 
-		<b ng-if="job.active">YES</b>
-		<b ng-if="!job.active">NO</b></th>
+	<th><b ng-show="currentUser.role=='ADMIN'">Active</b></th> 
+		
 	</tr>
 	<tr>
 	<td>{{job.jobDescription}}</td>
@@ -39,6 +38,8 @@
 	<td>{{job.yrsOfExp}}</td>
 	<td>{{job.company}}</td>
 	<td>{{job.postedOn | date:'yyyy:MM:dd'}}</td>
+	<td><b ng-if="job.active">YES</b>
+		<b ng-if="!job.active">NO</b></td>
 	</tr>
 	</table>	
 	</div>

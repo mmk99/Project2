@@ -47,9 +47,11 @@ public class UserDaoImpl implements UserDao{
 		}
 
 		public List<String> getOnlineUsers() {
+		        Session session=sessionFactory.openSession();
+		        Query query=session.createQuery("select username from User where online=1");
+		        List<String> onlineUsers=query.list();
+		        session.close();
+		        return onlineUsers;
+		    }	
 			
-			return null;
-		}
-
-
 }
